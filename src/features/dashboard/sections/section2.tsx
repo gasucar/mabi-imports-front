@@ -5,8 +5,10 @@ import perfuminaIcon from "../../../assets/icons/perfumina_icon.png";
 import ChatMock from "../components/chat_mock";
 import { useRef, useState } from "react";
 import { useChat } from "../../ai_assistant/chat/hooks/use_chat";
+import { useTranslation } from "react-i18next";
 
 const Section2 = () => {
+  const { t } = useTranslation()
   const [startChat, setStartChat] = useState(false);
   const chatRef = useRef(null);
   const { setIsVisible } = useChat();
@@ -27,18 +29,17 @@ const Section2 = () => {
             setIsVisible(true);
           }}
         >
-          <span className="inline-block text-xs tracking-widest border border-neutral-700 px-4 py-1 rounded-full text-neutral-300">
-            INTELLIGENT SCENT PROFILING
+          <span className="inline-block text-xs tracking-widest border uppercase border-neutral-700 px-4 py-1 rounded-full text-neutral-300">
+            {t("section2.badge")}
           </span>
 
           <h1 className="text-5xl md:text-6xl font-serif leading-tight">
-            A fragrance tailored <br />
-            <span className="text-neutral-400">exclusively</span> to you.
+            {t("section2.title_line1")} <br />
+            <span className="text-neutral-400">{t("section2.title_highlight")}</span> {t("section2.title_line2")}
           </h1>
 
           <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-            Perfumina AI analyzes your preferences, memories and personality
-            to recommend the perfect Arabic scent profile.
+            {t("section2.description")}.
           </p>
 
           <div className="flex gap-12 pt-6">
@@ -46,31 +47,31 @@ const Section2 = () => {
             <div className="flex flex-col gap-3 max-w-44">
               <img src={fingerprint} className="w-6 h-6 opacity-80" />
 
-              <h3 className="text-xs tracking-widest font-semibold text-neutral-300">
-                UNIQUE IDENTITY
+              <h3 className="text-xs tracking-widest font-semibold text-neutral-300 uppercase">
+                {t("section2.feature1_title")}
               </h3>
 
               <p className="text-xs text-neutral-500">
-                Scents matched to your distinct character.
+                {t("section2.feature1_desc")}.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 max-w-44">
               <img src={laboratory} className="w-6 h-6 opacity-80" />
 
-              <h3 className="text-xs tracking-widest font-semibold text-neutral-300">
-                PRECIOUS INGREDIENTS
+              <h3 className="text-xs tracking-widest font-semibold text-neutral-300 uppercase">
+                {t("section2.feature2_title")}
               </h3>
 
               <p className="text-xs text-neutral-500">
-                Only the finest Oud, Musk and Amber.
+                {t("section2.feature2_desc")}
               </p>
             </div>
 
           </div>
 
           <button className="flex items-center gap-2 text-sm border-b border-white pb-1 hover:opacity-70 transition">
-            Start Your Consultation →
+            {t("section2.cta")} →
           </button>
         </motion.div>
 
@@ -105,8 +106,8 @@ const Section2 = () => {
                 />
 
                 <div>
-                  <p className="text-sm font-medium text-white">Perfumina AI</p>
-                  <p className="text-xs text-neutral-400">PERSONAL PERFUMER</p>
+                  <p className="text-sm font-medium text-white">{t("section2.chat.title")}</p>
+                  <p className="text-xs text-neutral-400 uppercase">{t("section2.chat.subtitle")}</p>
                 </div>
               </div>
 
@@ -125,7 +126,7 @@ const Section2 = () => {
             <div className="border-t border-neutral-800 p-3 flex gap-2">
 
               <input
-                placeholder="Type your message..."
+                placeholder={t("section2.chat.placeholder")}
                 className="
                 flex-1
                 bg-neutral-800
@@ -148,7 +149,7 @@ const Section2 = () => {
                cursor-pointer
                "
               >
-                Send
+                {t("section2.chat.send")}
               </button>
 
             </div>

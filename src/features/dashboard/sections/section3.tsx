@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
-import PerfumeMock from "../components/perfume_mock";
 import CustomButton from "../../../shared/ui/buttons/custom_button";
+import type { IPerfume } from "../../../shared/interfaces/interfaces";
+import { useEffect, useState } from "react";
+import { fetchDashboardData } from "../api/dashboard_api";
+import PerfumePresentation from "../../../shared/ui/perfume/perfume_presentation";
+import { useTranslation } from "react-i18next";
 
 const container = {
   hidden: {},
@@ -17,6 +21,25 @@ const fadeUp = {
 };
 
 const Section3 = () => {
+  const {t} = useTranslation()
+
+  const [dashboardPerfumes, setDashboardPerfumes] = useState<IPerfume[]>([]);
+
+  useEffect(() => {
+    const fetchPerfumes = async () => {
+      try {
+        const response: IPerfume[] = await fetchDashboardData();
+        const perfumes = response.slice(0, 4);
+
+        setDashboardPerfumes(perfumes);
+      } catch (error) {
+        console.error("Error fetching dashboard data:", error);
+      }
+    };
+
+    fetchPerfumes();
+  }, []);
+
   return (
     <section className="w-full bg-white py-28 px-6">
 
@@ -36,7 +59,7 @@ const Section3 = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-serif"
           >
-            Available Stock
+            {t("section3.title")}
           </motion.h2>
 
           <motion.p
@@ -44,7 +67,7 @@ const Section3 = () => {
             transition={{ duration: 0.6 }}
             className="text-neutral-500 mt-3 text-sm"
           >
-            Discover our most exquisite fragrances
+            {t("section3.subtitle")}
           </motion.p>
         </motion.div>
 
@@ -57,29 +80,20 @@ const Section3 = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
         >
-          <PerfumeMock
-            name="Al Haramain Amber Oud"
-            description="Warm amber with rich oriental depth"
-            price="245"
-          />
-
-          <PerfumeMock
-            name="Al Haramain Amber Oud"
-            description="Fresh citrus layered with soft musk"
-            price="210"
-          />
-
-          <PerfumeMock
-            name="Al Haramain Amber Oud"
-            description="Intense oud blended with smoky woods"
-            price="320"
-          />
-
-          <PerfumeMock
-            name="Al Haramain Amber Oud"
-            description="Sweet vanilla wrapped in dark amber"
-            price="275"
-          />
+          {dashboardPerfumes.length === 0 ?
+            <p className="text-center col-span-full text-neutral-500">{t("section3.loading")}</p>
+            :
+            dashboardPerfumes.map(perfume => (
+              <PerfumePresentation
+                key={perfume.id}
+                name={perfume.name}
+                brand_name={perfume.brand.name}
+                description={perfume.short_description}
+                price={perfume.price}
+                image={perfume.first_image}
+              />
+            ))
+          }
         </motion.div>
 
         {/* BUTTON */}
@@ -92,7 +106,7 @@ const Section3 = () => {
           className="flex justify-center mt-16"
         >
           <CustomButton variant="secondary-outline" size="lg">
-            View all fragrances
+            {t("section3.button")}
           </CustomButton>
         </motion.div>
 

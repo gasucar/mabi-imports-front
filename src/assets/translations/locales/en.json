@@ -1,0 +1,39 @@
+{
+    "navbar": {
+        "catalog": "Catalog",
+        "perfumina_ai": "Perfumina AI",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "section1": {
+        "title_line1": "Find Your Perfect",
+        "title_line2": "Arabic Fragrance",
+        "subtitle": "Experience the art of scent through our intelligent AI perfumina. Tailored to your unique personality and taste.",
+        "talkToPerfumina": "Talk to Perfumina AI",
+        "goCatalog": "Go to catalog"
+    },
+    "section2": {
+        "badge": "intelligent scent profiling",
+        "title_line1": "A fragrance tailored",
+        "title_highlight": "exclusively",
+        "title_line2": "to you",
+        "description": "Perfumina AI analyzes your preferences, memories and personality to recommend the perfect Arabic scent profile.",
+        "feature1_title": "Unique identity",
+        "feature1_desc": "Scents matched to your distinct character.",
+        "feature2_title": "Premium fragances",
+        "feature2_desc": "Only the finest Oud, Musk and Amber.",
+        "cta": "Start Your Consultation →",
+        "chat": {
+            "title": "Perfumina AI",
+            "subtitle": "Personal assitant",
+            "placeholder": "Type your message...",
+            "send": "Send"
+        }
+    },
+    "section3": {
+        "title": "Available Stock",
+        "subtitle": "Discover our most exquisite fragrances",
+        "loading": "Loading...",
+        "button": "View all fragrances"
+    }
+}

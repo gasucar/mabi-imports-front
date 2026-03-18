@@ -1,12 +1,10 @@
-const API_URL = "http://127.0.0.1:8000";
-
 export type ChatResponse = {
   response: string;
 };
 
 export const sendChatMessage = async (message: string): Promise<ChatResponse> => {
 
-  const res = await fetch(`${API_URL}/ai/chat`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/ai/chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -1,0 +1,39 @@
+{
+    "navbar": {
+        "catalog": "Catálogo",
+        "perfumina_ai": "Perfumina AI",
+        "about": "Acerca de",
+        "contact": "Contacto"
+    },
+    "section1": {
+        "title_line1": "Encontra Tu perfume",
+        "title_line2": "Arabe ideal",
+        "subtitle": "Experimentá el arte de los aromas con nuestra perfumina inteligente con IA. Diseñada para tu personalidad y gustos únicos.",
+        "talkToPerfumina": "Hablar con Perfumina AI",
+        "goCatalog": "Ir al catálogo"
+    },
+    "section2": {
+        "badge": "Encontramos tu fragancia",
+        "title_line1": "El perfume creado",
+        "title_highlight": "exclusivamente",
+        "title_line2": "para vos.",
+        "description": "Perfumina AI analiza tus preferencias, recuerdos y personalidad para recomendarte el perfil de fragancia árabe ideal.",
+        "feature1_title": "Identidad unica",
+        "feature1_desc": "Aromas que combinan con tu carácter distintivo.",
+        "feature2_title": "Aromas premium",
+        "feature2_desc": "Solo Oud, Almizcle y Ámbar de la mejor calidad.",
+        "cta": "Comenzar tu consulta",
+        "chat": {
+            "title": "Perfumina AI",
+            "subtitle": "asistente personal",
+            "placeholder": "Escribí tu mensaje...",
+            "send": "Enviar"
+        }
+    },
+    "section3": {
+        "title": "Stock disponible",
+        "subtitle": "Descubrí nuestras fragancias más exclusivas",
+        "loading": "Cargando...",
+        "button": "Ver todas las fragancias"
+    }
+}

@@ -8,7 +8,7 @@ export interface INote {
 export interface IPerfume {
     id: string;
     name: string; 
-    brand_id: string;
+    brand: IBrand;
     short_description: string;
     long_description: string;
     price: string;
@@ -17,9 +17,13 @@ export interface IPerfume {
     season: "summer" | "winter" | "all";
     durations_hours: string;
     stock_quantity: string;
-    first_image_url: string;
-    secondary_images_url: string[];
-    created_at: string;
+    first_image: string;
+    images: string[];
+    created_at: Date;
+    updated_at: Date;
+    top: string[];
+    heart: string[];
+    base: string[];
 }
 
 export interface IBrand {
@@ -28,6 +32,7 @@ export interface IBrand {
     country: string;
     description: string;
     created_at: string;
+    image: string;
 }
 
 export interface IPerfumeNotes {
