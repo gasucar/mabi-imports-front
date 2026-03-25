@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import CustomButton from "../../../shared/ui/buttons/custom_button";
-import type { IPerfume } from "../../../shared/interfaces/interfaces";
-import { useEffect, useState } from "react";
-import { fetchDashboardData } from "../api/dashboard_api";
 import PerfumePresentation from "../../../shared/ui/perfume/perfume_presentation";
 import { useTranslation } from "react-i18next";
+import { usePerfumes } from "../../../shared/hooks/usePerfumes";
 
 const container = {
   hidden: {},
@@ -21,24 +19,8 @@ const fadeUp = {
 };
 
 const Section3 = () => {
-  const {t} = useTranslation()
-
-  const [dashboardPerfumes, setDashboardPerfumes] = useState<IPerfume[]>([]);
-
-  useEffect(() => {
-    const fetchPerfumes = async () => {
-      try {
-        const response: IPerfume[] = await fetchDashboardData();
-        const perfumes = response.slice(0, 4);
-
-        setDashboardPerfumes(perfumes);
-      } catch (error) {
-        console.error("Error fetching dashboard data:", error);
-      }
-    };
-
-    fetchPerfumes();
-  }, []);
+  const {t} = useTranslation()  
+  const {perfumes, loading} = usePerfumes()
 
   return (
     <section className="w-full bg-white py-28 px-6">
@@ -80,10 +62,10 @@ const Section3 = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
         >
-          {dashboardPerfumes.length === 0 ?
+          {loading ?
             <p className="text-center col-span-full text-neutral-500">{t("section3.loading")}</p>
             :
-            dashboardPerfumes.map(perfume => (
+            perfumes.slice(0,4).map(perfume => (
               <PerfumePresentation
                 key={perfume.id}
                 name={perfume.name}
