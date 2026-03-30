@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import ChatMessage from "../../../shared/ui/chat/chat_message";
+import ChatMessage from "../../../shared/constants/chat/chat_message";
 import { motion } from "framer-motion";
 import { useChat } from "../../ai_assistant/chat/hooks/use_chat";
 

@@ -1,4 +1,4 @@
-import CustomButton from "../../../shared/ui/buttons/custom_button"
+import CustomButton from "../../../shared/constants/buttons/custom_button"
 import banner from "../../../assets/images/dashboard_banner.png";
 import { useTranslation } from "react-i18next";
 

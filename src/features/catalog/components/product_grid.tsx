@@ -1,6 +1,6 @@
 import type { IPerfume } from "../../../shared/interfaces/interfaces";
-import PerfumePresentation from "../../../shared/ui/perfume/perfume_presentation";
-import Pagination from "../../../shared/ui/pagination/pagination";
+import PerfumePresentation from "../../../shared/constants/perfume/perfume_presentation";
+import Pagination from "../../../shared/constants/pagination/pagination";
 
 type Props = {
     perfumes: IPerfume[];

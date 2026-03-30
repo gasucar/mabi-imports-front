@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import ChatMessage from "../../../../shared/ui/chat/chat_message";
+import ChatMessage from "../../../../shared/constants/chat/chat_message";
 import { useEffect, useRef, useState } from "react";
 import perfuminaIcon from "../../../../assets/icons/perfumina_icon.png";
 import { useChat } from "../hooks/use_chat";
-import TypingIndicator from "../../../../shared/ui/chat/typing_indicator";
+import TypingIndicator from "../../../../shared/constants/chat/typing_indicator";
 import { sendChatMessage } from "../../api/chat_api";
 
 const ChatWindow = () => {

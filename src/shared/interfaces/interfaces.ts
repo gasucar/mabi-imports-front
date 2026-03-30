@@ -98,11 +98,10 @@ export interface IUserPreferredNotes {
 
 export interface IPerfumeFilters {
     search: string;
-    brands: string[];
-    genders: string[];
-    seasons: string[];
-    intensity: string[];
-    min_price: number;
-    max_price: number;
-    page: number;
+    brands: string;
+    gender: string;
+    season: string;
+    intensity: string;
+    price_min: string;
+    price_max: string;
 }

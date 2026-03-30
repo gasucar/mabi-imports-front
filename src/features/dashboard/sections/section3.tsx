@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import CustomButton from "../../../shared/ui/buttons/custom_button";
-import PerfumePresentation from "../../../shared/ui/perfume/perfume_presentation";
+import CustomButton from "../../../shared/constants/buttons/custom_button";
+import PerfumePresentation from "../../../shared/constants/perfume/perfume_presentation";
 import { useTranslation } from "react-i18next";
 import { usePerfumes } from "../../../shared/hooks/usePerfumes";
 
