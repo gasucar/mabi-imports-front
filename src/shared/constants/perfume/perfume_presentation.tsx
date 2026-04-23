@@ -10,9 +10,10 @@ type Props = {
   brand_name: string;
   price: string;
   image: string
+  id: string
 };
 
-const PerfumePresentation = ({ name, description, brand_name, price, image }: Props) => {
+const PerfumePresentation = ({ id ,name, description, brand_name, price, image }: Props) => {
 
   return (
     <motion.div
@@ -39,7 +40,7 @@ const PerfumePresentation = ({ name, description, brand_name, price, image }: Pr
             </CustomButton>
           </div>
         </div>
-        <a href="">
+        <a href={`/perfume/${id}`} className="block mt-4">
           <h3 className="mt-4 text-sm font-medium">{name}</h3>
           <p className="text-xs text-neutral-800 font-medium text-shadow-lg">
             {brand_name}

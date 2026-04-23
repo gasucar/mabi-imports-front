@@ -15,7 +15,7 @@ export interface IPerfume {
     gender_target: "male" | "female" | "unisex";
     intensity: "light" | "medium" | "strong";
     season: "summer" | "winter" | "all";
-    durations_hours: string;
+    duration_hours: string;
     stock_quantity: string;
     first_image: string;
     images: string[];

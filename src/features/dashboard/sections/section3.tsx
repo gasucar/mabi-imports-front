@@ -70,6 +70,7 @@ const Section3 = () => {
             perfumes.slice(0, 4).map(perfume => (
               <PerfumePresentation
                 key={perfume.id}
+                id={perfume.id}
                 name={perfume.name}
                 brand_name={perfume.brand.name}
                 description={perfume.short_description}

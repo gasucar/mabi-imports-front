@@ -56,6 +56,7 @@ const ProductGrid = ({ perfumes, search, page, limit, total, setSearch, setPage,
                     (perfumes.map((p) => (
                         <PerfumePresentation
                             key={p.id}
+                            id={p.id}
                             name={p.name}
                             description={p.short_description}
                             brand_name={p.brand.name}
